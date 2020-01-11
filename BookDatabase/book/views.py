@@ -47,4 +47,4 @@ def search(request):
 def searchdata(request):
     book_multiples = Book.objects.filter(name = request.GET['name'])
     print(book_multiples)
-    return render(request, 'book/library.html',{'shelf':book_multiples}) # yespaxi search garesi data upload_Form
+    return render(request, 'book/library.html',{'shelf':book_multiples}) 
