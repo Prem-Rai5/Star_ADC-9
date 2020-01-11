@@ -18,7 +18,7 @@ def upload(request):
             return HttpResponse("""your form is wrong, reload on <a href = "{{ url : 'index'}}">reload</a>""")
             
     else:
-     return render(request, 'book/Upload_form.html', {'Upload_form':upload})
+     return render(request, 'book/upload_form.html', {'upload_form':upload})
 
 def update_book(request, book_id):
     book_id = int(book_id)
@@ -30,7 +30,7 @@ def update_book(request, book_id):
     if book_form.is_valid():
        book_form.save()
        return redirect('index')
-    return render(request, 'book/Upload_form.html', {'Upload_form':book_form})
+    return render(request, 'book/upload_form.html', {'upload_form':book_form})
 def delete_book(request, book_id):
     book_id = int(book_id)
     try:
